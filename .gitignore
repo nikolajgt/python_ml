@@ -1,0 +1,8 @@
+data/*
+generated_models/*
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.idea/
+*.log
