@@ -1,6 +1,6 @@
 from faker import Faker
 import random
-from FakeCreditCardGen import FakeCreditCard
+from .FakeCreditCardGen import FakeCreditCard
 
 class EcommerceDataGenerator:
     def __init__(self):

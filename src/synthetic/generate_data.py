@@ -1,10 +1,10 @@
 import csv
 from multiprocessing import Pool
-from types.FakeJobApplicationGen import JobApplicationGenerator
-from types.FakeEcommerceSaleGen import EcommerceDataGenerator
-from types.FakeBankRapportGen import FakeBankReport
-from types.FakeCprGen import FakeCprNumber
-from types.FakeCreditCardGen import FakeCreditCard
+from .types.FakeJobApplicationGen import JobApplicationGenerator
+from .types.FakeEcommerceSaleGen import EcommerceDataGenerator
+from .types.FakeBankRapportGen import FakeBankReport
+from .types.FakeCprGen import FakeCprNumber
+from .types.FakeCreditCardGen import FakeCreditCard
 
 num_samples = 100000
 generatorEcommerce = EcommerceDataGenerator()
@@ -51,12 +51,12 @@ with Pool(num_cores) as pool:
     creditcard = pool.map(generate_creditcard, range(num_samples / 7)) # alot of different credit type so we just divide it to make it lower, still equal of each type
 
 
-write_to_csv(ecommerce, "data/generated_data/ecommerce_data.csv")
-write_to_csv(bankrapports_data, "data/generated_data/bankrapports_data.csv")
-jobapplicationfilename = "data/generated_data/jobapplication_data.csv"
+write_to_csv(ecommerce, "../../data/generated_data/ecommerce_data.csv")
+write_to_csv(bankrapports_data, "../../data/generated_data/bankrapports_data.csv")
+jobapplicationfilename = "../../data/generated_data/jobapplication_data.csv"
 
-write_to_csv(cprnumbers, "data/generated_data/sensitive/singlecprnumbers_data.csv")
-write_to_csv(creditcard, "data/generated_data/sensitive/singlecreditcards_data.csv")
+write_to_csv(cprnumbers, "../../data/generated_data/sensitive/singlecprnumbers_data.csv")
+write_to_csv(creditcard, "../../data/generated_data/sensitive/singlecreditcards_data.csv")
 
 def flatten_application(app):
     """Flatten a job application tuple into a single dictionary."""

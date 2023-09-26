@@ -1,3 +1,6 @@
 data/generated_data/sensitive
 data/outside_data/
 generated_models/
+
+execute script that is not main from root fx:
+python3 -m src.synthetic.generate_data

@@ -1,5 +1,5 @@
 from faker import Faker
-from FakeCprGen import FakeCprNumber
+from .FakeCprGen import FakeCprNumber
 
 class JobApplicationGenerator:
     def __init__(self):
